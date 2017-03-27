@@ -1,0 +1,34 @@
+Es en dos dimensiones?
+Es de consola?
+Es un juego de tiros?
+Es un juego indie?
+Es un juego sandbox?
+Es un juego de Aventura?
+Es un juego arcade?
+Es una serie de juegos? (Entiendase serie como un grupo de juegos con un nombre similar y mecanicas parecidas.)
+Es un juego de Accion?
+Es un juego competitivo?
+Es un juego triple A?
+Es un juego de simulacion?
+Es un juego deportivo?
+Es un juego multijugador?
+Es un juego de puzzle?
+Sigue una historia de un juego anterior?
+Tiene un personaje principal masculino?
+Es un juego de Nintendo?
+Es un juego movil?
+Es un juego de pelea?
+Es futurista?
+Es un juego de carreras?
+Tiene expansiones?
+Contiene personajes de la vida real?
+Es un juego de estrategia?
+Es un juego de Blizzard?
+Es un juego de rol?
+Es un juego de plataforma?
+Tiene un personaje reconocido?
+Es un juego de fiesta?
+Es un juego en equipos?
+Tiene un personaje principal femenino?
+Es de BioWare?
+Es un juego de cartas?
