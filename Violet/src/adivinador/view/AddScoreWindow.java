@@ -12,8 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.MaskFormatter;
 
@@ -34,8 +32,8 @@ public class AddScoreWindow extends JFrame implements ActionListener {
 	
 	public AddScoreWindow(Handler main, int score, long elapsedTime) {
 		setLayout(null);
-		setLocationRelativeTo(null);
 		setSize(300,200);
+		setLocationRelativeTo(null);
 		setTitle("Ingresar Puntaje");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setResizable(false);

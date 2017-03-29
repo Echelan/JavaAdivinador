@@ -31,6 +31,7 @@ public class MainWindow extends JFrame implements ActionListener {
 	private Handler ref;
 	private boolean guessing;
 	private JButton openScoreList;
+	private JButton openGuide;
 	private TimeDisplay display;
 	private boolean newGameCheck;
 	
@@ -82,6 +83,12 @@ public class MainWindow extends JFrame implements ActionListener {
 		openScoreList.addActionListener(this);
 		openScoreList.setLocation((getWidth()/2) - (200/2), 375);
 		add(openScoreList);
+		
+		openGuide = new JButton("?");
+		openGuide.setSize(45,45);
+		openGuide.addActionListener(this);
+		openGuide.setLocation(getWidth() - 55, 390);
+		add(openGuide);
 	}
 	
 	public void setDisplayText(String text) {
@@ -119,6 +126,8 @@ public class MainWindow extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == openScoreList) {
 			new ScoreWindow();
+		} else if (e.getSource() == openGuide) {
+			new GuideWindow();
 		} else {
 			if (newGameCheck) {
 				if (getButton(e.getSource()).getValue() == AnswerNode.VALUE_YES) {
@@ -180,7 +189,6 @@ public class MainWindow extends JFrame implements ActionListener {
 	
 	private class TimeDisplay extends Canvas implements Runnable {
 
-		
 		@Override
 		public void paint(Graphics g) {
 			g.setFont(new Font("Arial",Font.BOLD,30));

@@ -32,8 +32,8 @@ public class LearnWindow extends JFrame implements ActionListener  {
 
 	public LearnWindow(Handler main) {
 		setLayout(null);
-		setLocationRelativeTo(null);
 		setSize(300,400);
+		setLocationRelativeTo(null);
 		setTitle("Agregar Respuesta");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setResizable(false);

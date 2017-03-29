@@ -25,8 +25,8 @@ public class CasualtyWindow extends JFrame implements ActionListener {
 	
 	public CasualtyWindow(int id1, int id2) {
 		setLayout(null);
-		setLocationRelativeTo(null);
 		setSize(300,300);
+		setLocationRelativeTo(null);
 		setTitle("Resultados Parecidos");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setResizable(false);

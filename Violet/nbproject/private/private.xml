@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/Adivinador.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/data/NIC.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/view/ScoreWindow.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/view/CasualtyWindow.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/view/LearnWindow.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/view/MainWindow.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/view/AddScoreWindow.java</file>
-            <file>file:/D:/Developer/NetBeans/Adivinador/src/adivinador/model/Handler.java</file>
+            <file>file:/D:/Developer/NetBeans/JavaAdivinador/Violet/src/adivinador/model/Handler.java</file>
+            <file>file:/D:/Developer/NetBeans/JavaAdivinador/Violet/src/adivinador/view/CasualtyWindow.java</file>
+            <file>file:/D:/Developer/NetBeans/JavaAdivinador/Violet/src/adivinador/view/GuideWindow.java</file>
         </group>
     </open-files>
 </project-private>

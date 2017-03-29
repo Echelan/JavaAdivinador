@@ -36,7 +36,8 @@ public class Handler {
 	public Handler() {
 		adivinador.data.NIC.loadAllData();
 		mainWindow = new adivinador.view.MainWindow(this);
-		this.start();
+//		this.start();
+		doNextGame();
 	}
 	
 	public void start() {
