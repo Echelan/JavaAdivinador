@@ -61,20 +61,28 @@ public abstract class NIC {
 		
 	}
 	
+	public static boolean checkCasualty(int a, int b) {
+		boolean similar = false;
+		for (int i = 0; i < LIST_ANSWERS.get(a).getName().split(" ").length; i++) {
+			if (LIST_ANSWERS.get(a).getName().split(" ")[i].length() > 3) {
+				if (LIST_ANSWERS.get(b).getName().contains(LIST_ANSWERS.get(a).getName().split(" ")[i])) {
+					similar = true;
+				}
+			}
+		}
+		return similar;
+	}
+	
 	public static void checkAllCasualties() {
 		int id1 = 0; 
 		int id2 = 0;
 		boolean casualtyFound = false;
 		for (int i = 0; i < LIST_ANSWERS.size(); i++) {
 			for (int j = i+1; j < LIST_ANSWERS.size(); j++) {
-				for (int k = 0; k < LIST_ANSWERS.get(i).getName().split(" ").length; k++) {
-					if (LIST_ANSWERS.get(i).getName().split(" ")[k].length() > 3) {
-						if (LIST_ANSWERS.get(j).getName().contains(LIST_ANSWERS.get(i).getName().split(" ")[k])) {
-							id1 = i;
-							id2 = j;
-							casualtyFound = true;
-						}
-					}
+				if (checkCasualty(i,j)){
+					id1 = i;
+					id2 = j;
+					casualtyFound = true;
 				}
 			}
 		}
@@ -85,13 +93,9 @@ public abstract class NIC {
 	
 	public static void checkLastCasualty() {
 		int newID = LIST_ANSWERS.size()-1; 
-		for (int i = 0; i < LIST_ANSWERS.get(newID).getName().split(" ").length; i++) {
-			if (LIST_ANSWERS.get(newID).getName().split(" ")[i].length() > 3) {
-				for (int j = 0; j < LIST_ANSWERS.size()-1; j++) {
-					if (LIST_ANSWERS.get(j).getName().contains(LIST_ANSWERS.get(newID).getName().split(" ")[i])) {
-						new CasualtyWindow(j,newID);
-					}
-				}
+		for (int i = 0; i < LIST_ANSWERS.size()-1; i++) {
+			if (checkCasualty(newID,i)) {
+				new CasualtyWindow(i,newID);
 			}
 		}
 	}
