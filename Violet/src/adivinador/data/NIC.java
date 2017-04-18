@@ -122,13 +122,12 @@ public abstract class NIC {
 		LIST_ANSWERS = new NodeList<>();
 
 		for (int i = 0; i < readInfoA.size(); i++) {
-			String[] entry = readInfoA.get(i).split(";");
-			String answerName = entry[0];
+			String answerName = readInfoA.get(i).split(";")[0];
 			
 			LIST_ANSWERS.add(new Possibility(answerName,Possibility.TYPE_GUESS_POSSIBLE));
 			
-			for (int j = 1; j < entry.length; j++) {
-				float value = Float.parseFloat(entry[j]);
+			for (int j = 1; j < readInfoA.get(i).split(";").length; j++) {
+				float value = Float.parseFloat(readInfoA.get(i).split(";")[j]);
 				
 				if (Float.isNaN(value)) {
 					value = -1.0f;
@@ -150,9 +149,8 @@ public abstract class NIC {
 			String playerName;
 			int score;
 			if (i < readInfoS.size()) {
-				String[] entry = readInfoS.get(i).split(";");
-				playerName = entry[0];
-				score = Integer.parseInt(entry[1]);
+				playerName = readInfoS.get(i).split(";")[0];
+				score = Integer.parseInt(readInfoS.get(i).split(";")[1]);
 			} else {
 				playerName = "AAAAAAA";
 				score = 0;

@@ -6,6 +6,7 @@
 package adivinador.view;
 
 import adivinador.model.Handler;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -15,8 +16,8 @@ import javax.swing.JLabel;
  */
 public class ScoreWindow extends JFrame {
 	
-	JLabel[] nameDisplay;
-	JLabel[] scoreDisplay;
+	ArrayList<JLabel> nameDisplay;
+	ArrayList<JLabel> scoreDisplay;
 	JLabel title;
 	Handler ref;
 	
@@ -35,8 +36,8 @@ public class ScoreWindow extends JFrame {
 	
 	private void createInterface() {
 		int size = adivinador.data.NIC.MAX_SCORES;
-		nameDisplay = new JLabel[size];
-		scoreDisplay = new JLabel[size];
+		nameDisplay = new ArrayList<>();
+		scoreDisplay = new ArrayList<>();
 		
 		title = new JLabel("Lista de Puntajes");
 		title.setSize(100,30);
@@ -56,13 +57,13 @@ public class ScoreWindow extends JFrame {
 			JLabel name = new JLabel(placement+nameValue);
 			name.setSize(160,30);
 			name.setLocation(10, 30 + (30*i));
-			nameDisplay[i] = name;
+			nameDisplay.add(name);
 			add(name);
 			
 			JLabel score = new JLabel(scoreValue + " puntos");
 			score.setSize(100,30);
 			score.setLocation(170, 30 + (30*i));
-			scoreDisplay[i] = score;
+			scoreDisplay.add(name);
 			add(score);
 		}
 	}

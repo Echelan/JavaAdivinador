@@ -82,23 +82,6 @@ public class AddScoreWindow extends JFrame implements ActionListener {
 		}
 	}
 	
-	private boolean invalidName(String name) {
-		return (name.length() > 7) || (name.isEmpty()) || containsSpecial(name);
-	}
-	
-	private boolean containsSpecial(String name) {
-		String[] specials = {"\'","\\","\""," ","!","#","$","%","&","/","(",")","=","?","¡","¿",",",".","-",";",":","_","+","*","{","[","]","}"};
-		int i = 0;
-		boolean doesContain = false;
-		while( i < specials.length && !doesContain) {
-			if (name.contains(specials[i])) {
-				doesContain = true;
-			}
-			i++;
-		}
-		return doesContain;
-	}
-	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 //		if (invalidName(inputName.getText())) {
