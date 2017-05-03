@@ -50,6 +50,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		createInterface();
 		
 		setVisible(true);
+		new Thread(display).start();
 	}
 	
 	private void createInterface() {
@@ -72,12 +73,6 @@ public class MainWindow extends JFrame implements ActionListener {
 		questionDisplay.setEditable(false);
 		add(questionDisplay);
 		
-		display = new TimeDisplay();
-		display.setSize(160,30);
-		display.setLocation((getWidth()/2) - (160/2), 75);
-		new Thread(display).start();
-		add(display);
-		
 		openScoreList = new JButton("Ver Puntajes");
 		openScoreList.setSize(200,60);
 		openScoreList.addActionListener(this);
@@ -89,6 +84,11 @@ public class MainWindow extends JFrame implements ActionListener {
 		openGuide.addActionListener(this);
 		openGuide.setLocation(getWidth() - 55, 390);
 		add(openGuide);
+		
+		display = new TimeDisplay();
+		display.setSize(160,30);
+		display.setLocation((getWidth()/2) - (160/2), 75);
+		add(display);
 	}
 	
 	public void setDisplayText(String text) {
@@ -191,17 +191,19 @@ public class MainWindow extends JFrame implements ActionListener {
 
 		@Override
 		public void paint(Graphics g) {
-			g.setFont(new Font("Arial",Font.BOLD,30));
-			double curTime = ref.getElapsedTime();
-			curTime = Math.floor(curTime * (Math.pow(10,-8)));
-			curTime = curTime /10;
-			g.drawString(curTime+"s", 1, getHeight()-1);
 		}
 
 		@Override
 		public void run() {
+			createBufferStrategy(2);
 			while(true) {
-				repaint();
+				Graphics g = getBufferStrategy().getDrawGraphics();
+				g.setFont(new Font("Arial",Font.BOLD,30));
+				double curTime = ref.getElapsedTime();
+				curTime = Math.floor(curTime * (Math.pow(10,-8)));
+				curTime = curTime /10;
+				g.drawString(curTime+"s", 1, getHeight()-1);
+				getBufferStrategy().show();
 				try{
 					Thread.sleep(100);
 				}catch (Exception ex) {
